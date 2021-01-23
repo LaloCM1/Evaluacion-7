@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class= "circle xxlarge shade1" ></div>
+        <div class= "circle xlarge shade2" ></div>
+            <div class= "circle large shade3" ></div>
+                <div class= "circle mediun shade4" ></div>
+                    <div class= "circle small shade5" ></div>
+        <section>
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card bgcolor">
+                            <div class="card-body">
+                                <form action="/questions" onsubmit="event.preventDefault(), getQuestions()">
+                                    <h1 class="card-title text-center"> Answer the trivia</h1>
+                                    <div class="form-group">
+                                    <label for="total-questions"><h3>Total questions</h3></label>
+                                    <select class="form-control" id="total-questions">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="select-category"><h3>Category</h3></label>
+                                    <select class="form-control" id="select-category">
+                                    </select>
+                                    <label for="difficulty"><h3>Difficulty</h3></label>
+                                    <select  class="form-control" id="difficulty">
+                                        <option value="easy">Easy</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="hard">Hard</option>
+                                    </select>
+                                    <label for="type"><h3>Type of questions</h3></label>
+                                    <select class="form-control" id="type">
+                                        <option value="multiple">Multiple choice</option>
+                                        <option value="boolean">True or false</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Get questions</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="/answers" onsubmit="event.preventDefault(),validate()">
+                <div class="row justify-content-center" id="questions-container">
+                </div>
+            </form> 
+            </div>
+        </section>
+        <script src="./api.js"></script>
+    </body>
+    </html>
